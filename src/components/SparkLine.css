@@ -1,0 +1,88 @@
+/* src/components/SparkLine.css */
+
+/* Contenedor principal con gradiente y flex para distribuir contenido */
+.box-sparkline {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  /* Detalles: icono, título y valor */
+  .details {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+  
+  .details > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  
+  .details ion-icon {
+    font-size: 1.2rem;
+  }
+  
+  .details > div > span {
+    font-size: 0.7rem;
+  }
+  
+  .details > span {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  /* Contenedor del gráfico ocupa todo el espacio restante */
+  .chart-container {
+    flex: 1 1 auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Forzar el SVG/canvas interno a llenar el contenedor */
+  .chart-container .apexcharts-canvas,
+  .chart-container .apexcharts-canvas svg,
+  .chart-container .apexcharts-canvas canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* Ajustes de tamaños en desktop */
+  @media (min-width: 992px) {
+    .details ion-icon {
+      font-size: 1.5rem;
+    }
+    .details > div > span {
+      font-size: 0.8rem;
+    }
+    .details > span {
+      font-size: 2.2rem;
+    }
+  }
+  
+  /* Gradientes de fondo */
+  .gradient-blue { background-image: linear-gradient(135deg, #071c49 10%, #0396FF 100%); }
+  .gradient-green { background-image: linear-gradient(135deg, #054d43 10%, #6be084 100%); }
+  .gradient-orange { background-image: linear-gradient(135deg, #f31b4a 10%, #e78f30 100%); }
+  .gradient-pink { background-image: linear-gradient(135deg, #383ead 10%, #EE9AE5 100%); }
+  
+  /* Colores de texto */
+  .white { color: white; }
+  .black { color: black; }
+  

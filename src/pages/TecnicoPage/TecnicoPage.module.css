@@ -1,0 +1,42 @@
+.box {
+  background: #1E1E1E;
+  border-radius: 5px;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  color: #fff;
+}
+
+ion-row,
+ion-col {
+  height: 100%;
+}
+
+.dashboard-grid {
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+
+@media (min-width: 992px) {
+  .dashboard-grid {
+    display: grid;
+    height: calc(100vh - 56px);      /* 🔥 ocupa toda la pantalla sin scroll */
+    grid-template-rows: 1fr 1fr 1fr; /* 🔥 reparte altura en 3 filas iguales */
+    row-gap: 1rem;
+    column-gap: 1rem;
+  }
+
+  .box {
+    min-height: 0;                   /* 🔥 permite que la caja se adapte al grid */
+  }
+}
+
+@media (max-width: 991px) {
+  .dashboard-grid {
+    display: block;
+    min-height: calc(100vh - 56px);
+  }
+}
